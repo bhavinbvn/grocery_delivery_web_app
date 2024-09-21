@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery and Payment Details</title>
+</head>
+<body>
+
+<h2>Delivery and Payment Details Form</h2>
+
+<form action="/delivery_dtail" method="post">
+    <h3>User Details</h3>
+    <label for="username">Full Name:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <h3>Payment Details</h3>
+    <input type="radio" id="cash_on_delivery" name="payment_method" value="Cash on Delivery">
+    <label for="cash_on_delivery">Cash on Delivery</label><br>
+
+    <input type="radio" id="online_upi" name="payment_method" value="Online UPI">
+    <label for="online_upi">Online UPI</label><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

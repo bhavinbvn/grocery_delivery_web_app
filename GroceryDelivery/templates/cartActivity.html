@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styl.css">
+    <link href="/static/css/responsive.css" rel="stylesheet" />
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <!-- Include any necessary CSS files -->
+</head>
+
+<body>
+
+     <section class="py-5">
+      <div class="container-fluid">
+      <h3>Cart</h3>
+      <center>
+          <div class="groceries">
+        {% for grocery in groceries %}
+        <div class="grocery-item">
+      <span class="bad">{{ grocery.dicount }}%</span>
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="single-product.html" title="Product Title">
+          <img src="{{ grocery.image_url }}"  class="tab-image">
+        </a>
+      </figure>
+      <h3>{{ grocery.name }}</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> {{ grocery.rate }}</span>
+      <span class="price">Rs {{ grocery.price }}</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div><br>
+        </div>
+    </div>
+      {% endfor %}
+      </div>
+
+      </center>
+
+
+      </div>
+    </section>
+    <!-- Include any necessary JavaScript files -->
+</body>
+
+</html>
